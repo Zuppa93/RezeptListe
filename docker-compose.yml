@@ -1,0 +1,15 @@
+version 3.3
+
+services:
+  image: mysql:5.7
+  volumes:
+    - db_data:/var/lib/mysql
+  restart: always
+  environment:
+    MYSQL_ROOT_PASSWORD: king
+    MYSQL_DATABASE: webalayzer
+    MYSQL_USER: user
+    MYSQL_PASSWORD: user
+
+volumes:
+  db_data: {}
