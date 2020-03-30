@@ -28,7 +28,6 @@ package "Application"{
         class BorderAnleitung
         class BorderZutat
     }
-
 }
 
 package "Data"{

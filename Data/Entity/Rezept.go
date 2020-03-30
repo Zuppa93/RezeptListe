@@ -22,11 +22,3 @@ func (e *Rezept) SetAnleitung(newAnleitung Anleitung){
 func (e *Rezept) SetZutaten(newZutaten []Zutat){
 	e.zutaten = newZutaten
 }
-
-func (e *Rezept) AddZutat(newZutat Zutat){
-	e.zutaten = append(e.zutaten,newZutat)
-}
-
-func (e *Rezept) AddSchrittToAnleitung(schritt string){
-	e.anleitung.AddSchritt(schritt)
-}
