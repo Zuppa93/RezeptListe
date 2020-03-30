@@ -1,4 +1,6 @@
-package Data
+package Entity
+
+// Entity "Class"
 
 type Anleitung struct {
 	schritte []string

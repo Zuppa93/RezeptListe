@@ -1,5 +1,6 @@
-package Data
+package Entity
 
+// Entity "Class"
 
 type Zutat struct {
 	name string
