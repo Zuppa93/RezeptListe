@@ -1,0 +1,89 @@
+@startuml
+' Classes
+
+package FrontEnd {
+    class WebPresentation
+}
+
+package "Application"{
+
+    package Rezepte{
+        class useCases{
+            createRezept()
+            readRezept()
+            updateRezept()
+            deleteRezept()
+            createZutat()
+            readZutat()
+            updateZutat()
+            deleteZutat()
+        }
+    }
+
+    package "Filter"{
+        class TheBigFilter
+    }
+    package "BorderClasses"{
+        class BorderRezept
+        class BorderAnleitung
+        class BorderZutat
+    }
+
+}
+
+package "Data"{
+    package "Entity"{
+
+        class Rezept{
+            anleitung Anleitung
+            schritte []string
+        }
+
+        class Zutat{
+            name string
+            menge string
+            tag string
+        }
+
+        class Anleitung{
+            schritte []string
+        }
+    }
+
+    package "CRUD"{
+        class CRUDAnleitung{
+        }
+
+        class CRUDRezept{
+        }
+
+        class CRUDZutat{
+        }
+    }
+
+    package "Queries"{
+        class Queries
+    }
+}
+
+'Relations
+
+CRUDAnleitung ..|> Anleitung
+CRUDRezept ..|> Rezept
+CRUDZutat ..|> Zutat
+
+TheBigFilter ..|> CRUDAnleitung
+TheBigFilter ..|> CRUDRezept
+TheBigFilter ..|> CRUDZutat
+
+BorderZutat ..|> TheBigFilter
+BorderRezept ..|> TheBigFilter
+BorderAnleitung ..|> TheBigFilter
+
+useCases ..|> BorderZutat
+useCases ..|> BorderRezept
+useCases ..|> BorderAnleitung
+
+WebPresentation ..|> useCases
+
+@enduml

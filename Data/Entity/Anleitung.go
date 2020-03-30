@@ -3,7 +3,7 @@ package Entity
 // Entity "Class"
 
 type Anleitung struct {
-	schritte []string
+	schritte []string `json:"schritte"`
 }
 
 func (e *Anleitung) AddSchritt(newSchritt string){

@@ -3,8 +3,8 @@ package Entity
 // Entity "Class"
 
 type Zutat struct {
-	name string
-	menge string
+	name  string `json:name`
+	menge string `json:menge`
 }
 
 func (e *Zutat) setName(name string){

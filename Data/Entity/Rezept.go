@@ -3,8 +3,8 @@ package Entity
 // Entity "Class"
 
 type Rezept struct{
-	anleitung Anleitung
-	zutaten   []Zutat
+	anleitung Anleitung `json:anleitung`
+	zutaten []Zutat     `json":zutaten`
 }
 
 func (e *Rezept) GetAnleitung() Anleitung {
