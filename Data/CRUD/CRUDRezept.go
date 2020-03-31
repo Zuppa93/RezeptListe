@@ -1,24 +1,26 @@
 package CRUD
 
-import(
-	"RezeptListe/Data/Entity"
-)
+import "RezeptListe/Data/Entity"
 
-type CRUDRezept struct {
-	rezept Entity.Rezept
+type CRUDRezept struct{
+
 }
-
 // create
-func (e *CRUDRezept) createCRUDRezept(anleitung Entity.Anleitung,zutaten []Entity.Zutat)CRUDRezept{
-	var crudRezept CRUDRezept
-	crudRezept.rezept.SetAnleitung(anleitung)
-	crudRezept.rezept.SetZutaten(zutaten)
-	return crudRezept
+func CreateRezept(rezept Entity.Rezept) bool{
+	return false
 }
-
 // read
-func (e *CRUDRezept) getRezept()Entity.Rezept{
-	return e.rezept
+func GetAlleRezepte() []Entity.Rezept{
+	return nil
+}
+func GetRezeptByName(name string) Entity.Rezept{
+	return Entity.Rezept{}
 }
 // update
+func UpdateRezept(updatedRezept Entity.Rezept) bool{
+	return false
+}
 // delete
+func DeleteRezeptByName(name string) bool{
+	return false
+}

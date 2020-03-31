@@ -43,20 +43,10 @@ package "Data"{
             menge string
             tag string
         }
-
-        class Anleitung{
-            schritte []string
-        }
     }
 
     package "CRUD"{
-        class CRUDAnleitung{
-        }
-
         class CRUDRezept{
-        }
-
-        class CRUDZutat{
         }
     }
 
@@ -66,14 +56,11 @@ package "Data"{
 }
 
 'Relations
+Rezept ..|> Zutat
 
-CRUDAnleitung ..|> Anleitung
 CRUDRezept ..|> Rezept
-CRUDZutat ..|> Zutat
 
-TheBigFilter ..|> CRUDAnleitung
 TheBigFilter ..|> CRUDRezept
-TheBigFilter ..|> CRUDZutat
 
 BorderZutat ..|> TheBigFilter
 BorderRezept ..|> TheBigFilter
