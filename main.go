@@ -1,28 +1,30 @@
 package main
 
 import (
+	"RezeptListe/Data/CRUD"
 	"RezeptListe/Data/Entity"
-	"fmt"
 )
 
 func main(){
 
-	index := 3
+	var CRUDrezept CRUD.CRUDRezept
 
-	testText := []string{"0","1","2","3","4","5","6","7","8","9",}
+	var rezept Entity.Rezept
 
-	anleitung := Entity.Anleitung{}
+	var zutat1,zutat2 Entity.Zutat
 
-	anleitung.SetSchritte(testText)
+	zutat1.SetName("Unglaublicher Name")
+	zutat1.SetMenge("24")
 
-	fmt.Println(anleitung)
-	fmt.Println("Nun löschen wir Index ",index)
-	anleitung.DelSchrittByIndex(index)
-	fmt.Println(anleitung)
+	zutat2.SetName("Schlechterer Name")
+	zutat2.SetMenge("25")
 
-	fmt.Println("Lösche letzten Schritt")
-	anleitung.DelLastSchritt()
-	fmt.Println(anleitung)
+	zutaten := []Entity.Zutat{zutat1,zutat2}
 
+	rezept.SetName("Test")
+	rezept.SetSchritte([]string{"schneiden","kleiden","schweigen"})
+	rezept.SetZutaten(zutaten)
+
+	CRUDrezept.CreateRezept(rezept)
 
 }

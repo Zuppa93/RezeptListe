@@ -8,3 +8,6 @@ import (
 
 // This "class" will take care of MySQL Queries
 
+type DBCom struct {
+	entityManager
+}
